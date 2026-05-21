@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поиск кейсов — Проектный кейс-хаб</title>
+  <meta name="description" content="Поиск кейсов по базе Проектного кейс-хаба: находите проекты по ключевым словам и изучайте подробные описания.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Поиск кейсов — Проектный кейс-хаб">
+  <meta property="og:description" content="Быстрый поиск по проектным кейсам и переход к полному описанию проекта.">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:url" content="search">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="prefetch" href="/" as="document">
+  <link rel="prefetch" href="add" as="document">
+  <link rel="prefetch" href="cases.json" as="fetch">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="search-page" data-page="search">
+  <a class="skip-link" href="#main-content">Перейти к контенту</a>
+
+  <header>
+    <nav class="navbar" aria-label="Основная навигация">
+      <a href="/" class="nav-logo">Проектный кейс-хаб</a>
+      <div class="nav-links">
+        <a href="/">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 11.5L12 4l9 7.5"></path>
+            <path d="M6.5 10.5V20h11V10.5"></path>
+          </svg>
+          <span>Главная</span>
+        </a>
+        <a href="add">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 5v14"></path>
+            <path d="M5 12h14"></path>
+          </svg>
+          <span>Добавить кейс</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-main search-page-main">
+    <section class="search-intro" aria-labelledby="search-title">
+      <h1 id="search-title">Поиск кейсов</h1>
+      <p class="search-hint">
+        Введите ключевые слова: <span id="search-example" class="search-example">[пример]</span>.
+      </p>
+    </section>
+
+    <section aria-label="Форма поиска">
+      <form id="search-form" class="search-box" role="search">
+        <label for="query" class="sr-only">Запрос для поиска кейсов</label>
+        <input id="query" name="query" autocomplete="off" placeholder="Введите ключевые слова..." aria-describedby="search-status">
+        <button id="search-button" type="submit" data-action="search">
+          <span class="btn-label">Поиск</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+      <p id="search-status" class="search-status" aria-live="polite">Введите запрос или нажмите «Поиск», чтобы показать все кейсы.</p>
+    </section>
+
+    <section aria-labelledby="results-title">
+      <h2 id="results-title" class="sr-only">Результаты поиска</h2>
+      <div id="results" aria-live="polite" aria-busy="true"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Проектный кейс-хаб</p>
+  </footer>
+</body>
+</html>

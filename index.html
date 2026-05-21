@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проектный кейс-хаб</title>
+  <meta name="description" content="Проектный кейс-хаб: база проектных кейсов с поиском, подробным просмотром и возможностью добавить собственный кейс.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Проектный кейс-хаб">
+  <meta property="og:description" content="Изучайте реальные проектные кейсы, находите решения и публикуйте свой опыт.">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:url" content="index">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="prefetch" href="search" as="document">
+  <link rel="prefetch" href="case" as="document">
+  <link rel="prefetch" href="add" as="document">
+  <link rel="prefetch" href="cases.json" as="fetch">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="landing-page" data-page="index">
+  <a class="skip-link" href="#main-content">Перейти к контенту</a>
+
+  <header>
+    <nav class="navbar" aria-label="Основная навигация">
+      <a href="/" class="nav-logo" aria-current="page">Проектный кейс-хаб</a>
+      <div class="nav-links">
+        <a href="search">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="M16 16l4 4"></path>
+          </svg>
+          <span>Поиск кейсов</span>
+        </a>
+        <a href="add">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 5v14"></path>
+            <path d="M5 12h14"></path>
+          </svg>
+          <span>Добавить кейс</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-main">
+    <!-- HERO -->
+    <section class="landing-hero" aria-labelledby="hero-title">
+      <article class="landing-hero-content">
+        <p class="hero-label">MVP БАЗА ПРОЕКТНОГО ОПЫТА</p>
+        <h1 id="hero-title">Смотри, как делали другие, и запускай свой кейс быстрее</h1>
+        <p class="hero-description">
+          Проектный кейс-хаб собирает реальные кейсы от разработчиков, дизайнеров и аналитиков.
+          Находите подходящие решения, изучайте ход проекта и добавляйте собственный опыт в общую базу.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="search" role="button" aria-label="Перейти к поиску кейсов">Перейти к поиску</a>
+          <a class="btn btn-secondary" href="add" role="button" aria-label="Перейти к форме добавления кейса">Добавить кейс</a>
+        </div>
+
+        <div class="hero-stats" aria-label="Статистика базы кейсов">
+          <article class="stat-card">
+            <p id="metric-cases" class="stat-value">0</p>
+            <p class="stat-label">Всего кейсов</p>
+          </article>
+          <article class="stat-card">
+            <p id="metric-categories" class="stat-value">0</p>
+            <p class="stat-label">Категорий</p>
+          </article>
+          <article class="stat-card">
+            <p id="metric-authors" class="stat-value">0</p>
+            <p class="stat-label">Авторов</p>
+          </article>
+          <article class="stat-card">
+            <p id="metric-tags" class="stat-value">0</p>
+            <p class="stat-label">Ключевых тем</p>
+          </article>
+        </div>
+      </article>
+
+      <aside class="hero-visual" aria-label="Случайный кейс">
+        <div class="visual-glow" aria-hidden="true"></div>
+        <article class="preview-card">
+          <p class="preview-status">СЛУЧАЙНЫЙ КЕЙС</p>
+          <h2 id="featured-title">Загрузка кейса...</h2>
+          <p id="featured-short" class="preview-text">Подбираем описание проекта из базы.</p>
+          <div class="preview-tags" aria-hidden="true">
+            <span>кейс</span>
+            <span>проект</span>
+            <span>опыт</span>
+          </div>
+          <a id="featured-link" href="search" aria-label="Открыть случайный кейс">Открыть кейс</a>
+        </article>
+      </aside>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section-block section-soft" aria-labelledby="features-title">
+      <div class="section-head">
+        <h2 id="features-title">Что даёт кейс-хаб</h2>
+        <p>Одна точка доступа к проектному опыту: от идеи до результата, с понятной структурой и быстрым переходом к нужному кейсу.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Быстрый поиск</h3>
+          <p>Находите кейсы по ключевым словам и тематике без сложных фильтров.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Подробный разбор</h3>
+          <p>Каждый кейс содержит историю проекта, этапы работы и итоговые результаты.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Живая база</h3>
+          <p>Показатели и подборки обновляются автоматически при изменении базы кейсов.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section class="section-block section-flow" aria-labelledby="flow-title">
+      <div class="section-head">
+        <h2 id="flow-title">Как это работает</h2>
+        <p>Простой путь от знакомства с чужим проектом до публикации собственного кейса.</p>
+      </div>
+      <div class="steps flow-steps">
+        <article class="step-card">
+          <span>ШАГ 1</span>
+          <h3>Найди кейс</h3>
+          <p>Открой поиск и выбери проект, максимально близкий по задаче.</p>
+        </article>
+        <span class="step-arrow" aria-hidden="true">→</span>
+        <article class="step-card">
+          <span>ШАГ 2</span>
+          <h3>Изучи детали</h3>
+          <p>Посмотри ход проекта, решения команды и практические итоги.</p>
+        </article>
+        <span class="step-arrow" aria-hidden="true">→</span>
+        <article class="step-card">
+          <span>ШАГ 3</span>
+          <h3>Добавь свой опыт</h3>
+          <p>Заполни форму и расширь базу кейсов для следующих участников.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CASES -->
+    <section class="section-block section-clean" aria-labelledby="samples-title">
+      <div class="section-head">
+        <h2 id="samples-title">Подборка кейсов</h2>
+        <p>Несколько примеров из базы. Список масштабируется и адаптируется под ширину экрана.</p>
+      </div>
+      <div id="sample-grid" class="sample-grid" aria-live="polite" aria-busy="true">
+        <article class="sample-card loading-card" aria-hidden="true">
+          <div class="skeleton skeleton-line skeleton-line-lg"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line skeleton-line-short"></div>
+        </article>
+        <article class="sample-card loading-card" aria-hidden="true">
+          <div class="skeleton skeleton-line skeleton-line-lg"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line skeleton-line-short"></div>
+        </article>
+        <article class="sample-card loading-card" aria-hidden="true">
+          <div class="skeleton skeleton-line skeleton-line-lg"></div>
+          <div class="skeleton skeleton-line"></div>
+          <div class="skeleton skeleton-line skeleton-line-short"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-block cta-block" aria-labelledby="cta-title">
+      <h2 id="cta-title">Готовы добавить свой кейс?</h2>
+      <p>Оформите проект в базе и помогите другим быстрее проходить похожие задачи.</p>
+      <a href="add" class="btn btn-primary" role="button" aria-label="Открыть форму добавления кейса">Добавить кейс</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Проектный кейс-хаб</p>
+  </footer>
+</body>
+</html>

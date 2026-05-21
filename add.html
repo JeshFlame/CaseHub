@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Добавить кейс — Проектный кейс-хаб</title>
+  <meta name="description" content="Форма добавления нового проектного кейса в базу Проектного кейс-хаба.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Добавить кейс — Проектный кейс-хаб">
+  <meta property="og:description" content="Опишите свой проект и добавьте кейс в общую базу.">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:url" content="add">
+  <link rel="preload" href="style.css" as="style">
+  <link rel="prefetch" href="/" as="document">
+  <link rel="prefetch" href="search" as="document">
+  <link rel="prefetch" href="cases.json" as="fetch">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="add">
+  <a class="skip-link" href="#main-content">Перейти к контенту</a>
+
+  <header>
+    <nav class="navbar" aria-label="Основная навигация">
+      <a href="/" class="nav-logo">Проектный кейс-хаб</a>
+      <div class="nav-links">
+        <a href="/">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 11.5L12 4l9 7.5"></path>
+            <path d="M6.5 10.5V20h11V10.5"></path>
+          </svg>
+          <span>Главная</span>
+        </a>
+        <a href="search">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="M16 16l4 4"></path>
+          </svg>
+          <span>Поиск</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-main">
+    <section class="add-intro" aria-labelledby="add-title">
+      <h1 id="add-title">Добавить кейс</h1>
+      <p class="form-hint">
+        Заполните форму ниже. На этапе MVP форма служит для подготовки структуры кейса без сохранения в базу.
+      </p>
+    </section>
+
+    <section aria-label="Форма добавления кейса">
+      <form id="addForm">
+        <label for="title">Название кейса</label>
+        <input id="title" name="title" placeholder="Например: Система мониторинга" required>
+
+        <label for="author">Автор</label>
+        <input id="author" name="author" placeholder="Имя и фамилия" required>
+
+        <label for="category">Категория</label>
+        <input id="category" name="category" placeholder="Например: IT, Экология, Наука" required>
+
+        <label for="tags">Теги</label>
+        <input id="tags" name="tags" placeholder="Через запятую">
+
+        <label for="short">Краткое описание</label>
+        <textarea id="short" name="short" placeholder="2-3 предложения о сути проекта" required></textarea>
+
+        <label for="full">Подробное описание</label>
+        <textarea id="full" name="full" placeholder="Цель, этапы, результаты и выводы по кейсу" required></textarea>
+
+        <button type="submit">Подготовить кейс</button>
+        <p id="add-status" class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Проектный кейс-хаб</p>
+  </footer>
+</body>
+</html>
