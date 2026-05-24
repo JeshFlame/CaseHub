@@ -1,5 +1,13 @@
-.env
-node_modules/
-.pm2/
-*.log
-cases.json
+# Backend
+backend/node_modules/
+backend/.env
+backend/*.log
+backend/.pm2/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
