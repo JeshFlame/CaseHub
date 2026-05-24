@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель — Проектный кейс-хаб</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="admin">
+  <a class="skip-link" href="#main-content">Перейти к контенту</a>
+
+  <header>
+    <nav class="navbar" aria-label="Основная навигация">
+      <a href="/" class="nav-logo">Проектный кейс-хаб</a>
+      <div class="nav-links">
+        <a href="/">Главная</a>
+        <a href="search">Поиск</a>
+        <a href="add">Добавить кейс</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="page-main">
+    <section class="section-block">
+      <h1>Админ-панель</h1>
+      <p class="form-hint">Модерация кейсов и управление публикациями.</p>
+    </section>
+
+    <section id="admin-auth" class="section-block">
+      <h2>Вход администратора</h2>
+      <form id="adminLoginForm">
+        <label for="admin-username">Логин</label>
+        <input id="admin-username" name="username" value="admin" required>
+
+        <label for="admin-password">Пароль</label>
+        <input id="admin-password" name="password" type="password" required>
+
+        <button type="submit">Войти</button>
+        <p id="admin-login-status" class="form-status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="admin-content" class="section-block" style="display:none;">
+      <div class="admin-toolbar">
+        <h2>Модерация</h2>
+        <button id="adminLogoutBtn" class="btn-secondary">Выйти</button>
+      </div>
+
+      <h3>Ожидают модерации</h3>
+      <div id="admin-pending-list" class="sample-grid"></div>
+
+      <h3 style="margin-top:20px;">Опубликованные</h3>
+      <div id="admin-published-list" class="sample-grid"></div>
+      <p id="admin-status" class="form-status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Проектный кейс-хаб</p>
+  </footer>
+</body>
+</html>

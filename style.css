@@ -984,3 +984,11 @@ form button {
     scroll-behavior: auto !important;
   }
 }
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
