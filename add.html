@@ -46,7 +46,7 @@
     <section class="add-intro" aria-labelledby="add-title">
       <h1 id="add-title">Добавить кейс</h1>
       <p class="form-hint">
-        Заполните форму ниже. На этапе MVP форма служит для подготовки структуры кейса без сохранения в базу.
+        Заполните форму ниже.
       </p>
     </section>
 
@@ -69,6 +69,9 @@
 
         <label for="full">Подробное описание</label>
         <textarea id="full" name="full" placeholder="Цель, этапы, результаты и выводы по кейсу" required></textarea>
+
+        <label for="images">Фотографии (URL)</label>
+        <textarea id="images" name="images" placeholder="Один URL на строку, например: https://example.com/photo1.jpg"></textarea>
 
         <button type="submit">Подготовить кейс</button>
         <p id="add-status" class="form-status" aria-live="polite"></p>
